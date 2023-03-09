@@ -4,7 +4,7 @@
  */
 
 // an email address that will be in the From field of the email.
-$from = 'Demo contact form <demo@domain.com>';
+$from = 'Contact form <demo@domain.com>';
 
 // an email address that will receive the email with the output of the form
 $sendTo = 'Newsletter Contact <thegoldstandardgrp@gmail.com>';
@@ -60,6 +60,8 @@ catch (\Exception $e)
     $responseArray = array('type' => 'danger', 'message' => $errorMessage);
 }
 
+// Redirect to homepage after response is displayed
+header("Location: index.html");
 
 // if requested by AJAX request return JSON response
 if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
@@ -69,8 +71,8 @@ if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQ
 
     echo $encoded;
 }
-// else just display the message and redirect to homepage
+// else just display the message
 else {
     echo $responseArray['message'];
-    header('Location: "https://goldbackers.info"'); // Replace "/" with the homepage URL if needed
 }
+?>
