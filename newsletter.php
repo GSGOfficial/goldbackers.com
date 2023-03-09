@@ -69,7 +69,8 @@ if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQ
 
     echo $encoded;
 }
-// else just display the message
+// else just display the message and redirect to homepage
 else {
     echo $responseArray['message'];
+    header('Location: /'); // Replace "/" with the homepage URL if needed
 }
