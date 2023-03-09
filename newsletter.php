@@ -72,5 +72,5 @@ if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQ
 // else just display the message and redirect to homepage
 else {
     echo $responseArray['message'];
-    header('Location: /'); // Replace "/" with the homepage URL if needed
+    header('Location: "https://goldbackers.info"'); // Replace "/" with the homepage URL if needed
 }
