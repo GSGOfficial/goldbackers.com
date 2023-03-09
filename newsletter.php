@@ -61,7 +61,7 @@ catch (\Exception $e)
 }
 
 // Redirect to homepage after response is displayed
-header("Location: index.html");
+header("Location: index.html/#");
 
 // if requested by AJAX request return JSON response
 if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
